@@ -9,14 +9,25 @@
   padding-bottom: var(--mantine-spacing-md);
 }
 
-.like {
-  color: var(--mantine-color-red-6);
-  width: 20px;
-  height: 20px;
+.carousel {
+  &:hover {
+    .carouselControls {
+      opacity: 1;
+    }
+  }
 }
 
-.label {
-  text-transform: uppercase;
-  font-size: var(--mantine-font-size-xs);
-  font-weight: 700;
+.carouselControls {
+  transition: opacity 150ms ease;
+  opacity: 0;
+}
+
+.carouselIndicator {
+  width: 4px;
+  height: 4px;
+  transition: width 250ms ease;
+
+  &[data-active] {
+    width: 16px;
+  }
 }

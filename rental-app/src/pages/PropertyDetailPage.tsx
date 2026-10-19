@@ -1,3 +1,4 @@
+import { Carousel } from '@mantine/carousel';
 import { Container, Title, Text, Button, Image, Badge, Group } from "@mantine/core";
 import { useParams, useNavigate } from "react-router-dom";
 import { demoProperties } from "../data/demo";
@@ -11,6 +12,12 @@ export function PropertyDetailPage() {
     return <Container py="xl"><Title>Квартира не найдена</Title></Container>;
   }
 
+    const slides = property.images.map((image, index) => (
+    <Carousel.Slide key={image + index}>
+      <Image src={image} height={400} alt={`${property.title} фото ${index + 1}`} />
+    </Carousel.Slide>
+  ));
+
   return (
     <Container size="md" py="xl">
     <Button variant="subtle" onClick={() => navigate(-1)} mb="md"> &lt; Назад</Button>
@@ -20,7 +27,15 @@ export function PropertyDetailPage() {
           Забронировать
         </Button>
       </Group>
-    <Image src={property.image} alt={property.title} height={350} radius="md" mb="lg" mt={100}/>
+      <Carousel 
+        pos="relative"
+        withIndicators 
+        height={400} 
+        emblaOptions={{ loop: true }}
+        mb="lg"
+      >
+        {slides}
+      </Carousel>
     <Text mt={100} fz="lg">Адрес: {property.address}</Text>
     <Text mt="md" fz="lg">{property.description}</Text>
     <Group justify="Flex-start" align="center" mb="md" mt={50}>
