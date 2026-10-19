@@ -4,7 +4,7 @@ import { Header } from "./components/Header";
 import { HomePage } from "./pages/HomePage";
 import { LoginPage } from "./pages/LoginPage";
 import { ProfilePage } from "./pages/ProfilePage";
-
+import { PropertyDetailPage } from "./pages/PropertyDetailPage";
 export function App() {
   return (
     <BrowserRouter>
@@ -16,6 +16,12 @@ export function App() {
         <AppShell.Main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+          </Routes>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/property/:id" element={<PropertyDetailPage />} /> {/* ← добавили роут */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/profile" element={<ProfilePage />} />
           </Routes>

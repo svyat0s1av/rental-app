@@ -2,6 +2,7 @@ import { ActionIcon, Badge, Button, Card, Group, Image, Text } from '@mantine/co
 import type { Property } from "../types";
 import { IconHeart } from '@tabler/icons-react';
 import classes from "./PropertyCard.module.css";
+import { Link } from "react-router-dom";
 
 interface Props {
   property: Property;
@@ -17,14 +18,12 @@ export function PropertyCard({ property }: Props) {
       </Card.Section>
 
       <Card.Section className={classes.section} mt="md">
-        <Group justify="apart">
-          <Text fz="lg" fw={500}>
+          <Text fz="xl" fw={500}>
             {title}
           </Text>
-          <Badge size="sm" variant="light">
+          <Text fz="lg" fw={400}>
             {address}
-          </Badge>
-        </Group>
+          </Text>
         <Text fz="sm" mt="xs">
           {description}
         </Text>
@@ -40,7 +39,7 @@ export function PropertyCard({ property }: Props) {
           {price.toLocaleString("ru-RU")} ₽/мес
         </Text>
         <Group gap="xs">
-          <Button radius="md">Подробнее</Button>
+          <Button component={Link} to={`/property/${property.id}`} radius="md">Подробнее</Button>
           <ActionIcon variant="default" radius="md" size={36} aria-label="Like">
             <IconHeart stroke={1.5} />
           </ActionIcon>

@@ -7,7 +7,7 @@ export function HomePage() {
     <Container size="lg" py="xl">
       <Title order={1}>Найдите жильё для аренды</Title>
       <Text c="dimmed" mt="xs">
-        Актуальные объявления от арендодателей
+        Актуальные объявления
       </Text>
 
       <Space h="xl" />
