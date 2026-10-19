@@ -8,6 +8,8 @@ import {
   Title
 } from '@mantine/core';
 import classes from './LoginPage.module.css';
+import { Link } from "react-router-dom";
+
 
 export function LoginPage() {
   return (
@@ -20,7 +22,7 @@ export function LoginPage() {
         <TextInput label="Электронная почта" placeholder="hello@gmail.com" size="md" radius="md" />
         <PasswordInput label="Пароль" placeholder="Ваш пароль" mt="md" size="md" radius="md" />
         <Checkbox label="Запомнить меня" mt="xl" size="md" />
-        <Button fullWidth mt="xl" size="md" radius="md">
+        <Button component={Link} to="/profile" fullWidth mt="xl" size="md" radius="md">
           Войти
         </Button>
 
