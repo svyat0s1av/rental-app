@@ -16,12 +16,7 @@ export function App() {
         <AppShell.Main>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-          </Routes>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/property/:id" element={<PropertyDetailPage />} /> {/* ← добавили роут */}
+            <Route path="/property/:id" element={<PropertyDetailPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/profile" element={<ProfilePage />} />
           </Routes>

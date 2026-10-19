@@ -9,7 +9,10 @@ export const demoProperties: Property[] = [
     rooms: 1,
     area: 32,
     description: "Хорошая квартира, качественная такая",
-    image: "/images/1.jpg"
+    images: [
+      "/images/1.jpg",
+      "/images/2.jpg"
+    ]
   },
   {
     id: 2,
@@ -19,7 +22,7 @@ export const demoProperties: Property[] = [
     rooms: 1,
     area: 24,
     description: "Компактная студия со свежим ремонтом, рядом метро и магазины",
-    image: "/images/2.jpg"
+    images: ["/images/2.jpg"]
   },
   {
     id: 3,
@@ -28,7 +31,8 @@ export const demoProperties: Property[] = [
     price: 45000,
     rooms: 2,
     area: 54,
-    description: "Светлая двушка, панорамный балкон, вся мебель остаётся"
+    description: "Светлая двушка, панорамный балкон, вся мебель остаётся",
+    images: ["/images/1.jpg"] // <-- добавил картинку
   },
   {
     id: 4,
@@ -37,7 +41,8 @@ export const demoProperties: Property[] = [
     price: 60000,
     rooms: 3,
     area: 78,
-    description: "Просторная квартира для семьи, тихий двор, парковка"
+    description: "Просторная квартира для семьи, тихий двор, парковка",
+    images: ["/images/2.jpg"] // <-- добавил картинку
   },
   {
     id: 5,
@@ -46,7 +51,8 @@ export const demoProperties: Property[] = [
     price: 32000,
     rooms: 1,
     area: 36,
-    description: "Уютная квартира после ремонта, развитая инфраструктура рядом"
+    description: "Уютная квартира после ремонта, развитая инфраструктура рядом",
+    images: ["/images/1.jpg"] // <-- добавил картинку
   },
   {
     id: 6,
@@ -55,6 +61,7 @@ export const demoProperties: Property[] = [
     price: 15000,
     rooms: 1,
     area: 27,
-    description:"Квартира без ремонта"
+    description:"Квартира без ремонта",
+    images: ["/images/2.jpg"] // <-- добавил картинку
   }
-]
+];

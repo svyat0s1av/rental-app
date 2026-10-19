@@ -6,5 +6,5 @@ export interface Property {
     rooms: number;
     area: number;
     description: string;
-    image?: string;
+    images: string[];
 }
