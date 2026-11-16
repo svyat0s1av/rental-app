@@ -4,23 +4,32 @@ import { IconHeart } from '@tabler/icons-react';
 import classes from "./PropertyCard.module.scss";
 import { Link } from "react-router-dom";
 import { Carousel } from '@mantine/carousel';
+import { BACKEND_URL } from '../api/client';
 
 interface Props {
   property: Property;
 }
 
 export function PropertyCard({ property }: Props) {
-  const { images, title, description, address, rooms, area, price } = property;
-  
-  const slides = images.map((image, index) => (
-    <Carousel.Slide key={image}>
-      <Image src={image} height={220} alt={`Slide ${index + 1}`} />
+  const { images = [], title, description, address, rooms, area, price } = property;
+
+  const slides = images.length > 0 ? images.map((image, index) => (
+    <Carousel.Slide key={image.id}>
+      <Image
+        src={image.url.startsWith('http') ? image.url : `${BACKEND_URL}${image.url}`}
+        height={220}
+        alt={`Фото ${index + 1}`}
+      />
     </Carousel.Slide>
-  ));
+  )) : [
+    <Carousel.Slide key="placeholder">
+      <Image src="https://placehold.co" height={220} alt="Нет фото" />
+    </Carousel.Slide>
+  ];
 
   return (
     <Card radius="md" withBorder padding="md">
-       <Card.Section>
+      <Card.Section>
         <Carousel
           withIndicators
           emblaOptions={{ loop: true }}

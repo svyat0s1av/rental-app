@@ -1,8 +1,32 @@
-import { Container, Title, Text, SimpleGrid, Space } from "@mantine/core";
+import { useEffect, useState } from 'react';
+import { Container, Title, Text, SimpleGrid, Space, Loader } from "@mantine/core";
 import { PropertyCard } from "../components/PropertyCard";
-import { demoProperties } from "../data/demo";
+import api from '../api/client';
+import type { Property } from "../types";
 
 export function HomePage() {
+  const [properties, setProperties] = useState<Property[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProperties = async () => {
+      try {
+        const response = await api.get('/properties/');
+        setProperties(response.data);
+      } catch (error) {
+        console.error("Ошибка при загрузке квартир:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProperties();
+  }, []);
+
+  if (loading) {
+    return <Container py="xl"><Loader /></Container>;
+  }
+
   return (
     <Container size="lg" py="xl">
       <Title order={1}>Найдите жильё для аренды</Title>
@@ -13,9 +37,13 @@ export function HomePage() {
       <Space h="xl" />
 
       <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="lg">
-        {demoProperties.map((property) => (
-          <PropertyCard key={property.id} property={property} />
-        ))}
+        {properties.length === 0 ? (
+          <Text>Пока нет объявлений</Text>
+        ) : (
+          properties.map((property) => (
+            <PropertyCard key={property.id} property={property} />
+          ))
+        )}
       </SimpleGrid>
     </Container>
   );

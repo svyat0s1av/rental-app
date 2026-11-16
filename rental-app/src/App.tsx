@@ -5,6 +5,7 @@ import { HomePage } from "./pages/HomePage";
 import { LoginPage } from "./pages/LoginPage";
 import { ProfilePage } from "./pages/ProfilePage";
 import { PropertyDetailPage } from "./pages/PropertyDetailPage";
+import { RegisterPage } from "./pages/RegisterPage";
 export function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ export function App() {
             <Route path="/property/:id" element={<PropertyDetailPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/register" element={<RegisterPage />} />
           </Routes>
         </AppShell.Main>
       </AppShell>
