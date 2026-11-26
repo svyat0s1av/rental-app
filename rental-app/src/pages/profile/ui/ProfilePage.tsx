@@ -27,9 +27,9 @@ import {
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { PropertyCard } from "../components/PropertyCard";
+import { PropertyCard } from "../../../entities/property";
 import type { Property, User, Contract, Payment } from "../types";
-import api, { BACKEND_URL } from "../api/client";
+import api, { BACKEND_URL } from "../../../shared/api";
 
 export function ProfilePage() {
   const navigate = useNavigate();

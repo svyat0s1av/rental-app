@@ -3,7 +3,7 @@ import { Carousel } from '@mantine/carousel';
 import { Container, Title, Text, Button, Image, Badge, Group, Loader } from "@mantine/core";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from 'axios';
-import api, { BACKEND_URL } from '../api/client';
+import api, { BACKEND_URL } from '../../../shared/api';
 import type { Property } from '../types';
 
 export function PropertyDetailPage() {

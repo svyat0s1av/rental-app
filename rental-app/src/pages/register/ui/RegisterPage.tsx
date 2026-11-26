@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Button, Paper, PasswordInput, TextInput, Title, Anchor, Select } from '@mantine/core';
-import classes from './LoginPage.module.css';
-import api from '../api/client';
+import classes from '../../../shared/ui/AuthPage.module.css';
+import api from '../../../shared/api';
 
 export function RegisterPage() {
   const [email, setEmail] = useState('');

@@ -4,7 +4,7 @@ import { IconHeart } from '@tabler/icons-react';
 import classes from "./PropertyCard.module.scss";
 import { Link } from "react-router-dom";
 import { Carousel } from '@mantine/carousel';
-import { BACKEND_URL } from '../api/client';
+import { BACKEND_URL } from '../../../shared/api';
 
 interface Props {
   property: Property;

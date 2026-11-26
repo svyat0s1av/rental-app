@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Container, Title, Text, SimpleGrid, Space, Loader } from "@mantine/core";
-import { PropertyCard } from "../components/PropertyCard";
-import api from '../api/client';
+import { PropertyCard } from "../../../entities/property";
+import api from '../../../shared/api';
 import type { Property } from "../types";
 
 export function HomePage() {

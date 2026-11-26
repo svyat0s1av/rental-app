@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppShell } from "@mantine/core";
-import { Header } from "./components/Header";
-import { HomePage } from "./pages/HomePage";
-import { LoginPage } from "./pages/LoginPage";
-import { ProfilePage } from "./pages/ProfilePage";
-import { PropertyDetailPage } from "./pages/PropertyDetailPage";
-import { RegisterPage } from "./pages/RegisterPage";
+import { Header } from "../widgets/header";
+import { HomePage } from "../pages/home";
+import { LoginPage } from "../pages/login";
+import { ProfilePage } from "../pages/profile";
+import { PropertyDetailPage } from "../pages/property-detail";
+import { RegisterPage } from "../pages/register";
+
 export function App() {
   return (
     <BrowserRouter>
